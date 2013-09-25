@@ -15,6 +15,7 @@ requirejs.config({
         'jquery': '../lib/jquery'
         , 'underscore': '../lib/underscore'
         , 'sinon': '../lib/sinon'
+        , 'EventEmitter' :'../lib/EventEmitter'
     },
 
     shim: {

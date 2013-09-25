@@ -1,21 +1,13 @@
-define(['App', 'jquery', 'underscore','sinon'], function(App, $, _, sinon) {
+define(['app', 'jquery', 'underscore','sinon'], function(app, $, _, sinon,dsf) {
 
     describe('just checking', function() {
 
         it('works for app', function() {
-            var el = $('<div></div>');
+            expect(dsf).toBeUndefined();
 
-            var app = new App(el);
-            app.render();
 
-            expect(app.sinonTest()).toEqual('what you get');
-            expect(el.text()).toEqual('require.js up and running');
         });
 
-        it('works for underscore', function() {
-            // just checking that _ works
-            expect(_.size([1,2,3])).toEqual(3);
-        });
 
     });
 });

@@ -1,17 +1,42 @@
-define(['jquery','utils/test','utils/sinonTest'],function($,test, sinonTest){
-    var App = function (el) {
-      this.el = el;
+define(['jquery','EventEmitter'], function ($) {
+    "use strict";
+var app = function () {
+    var canvas = document.getElementById("drawCanvas") || {}
+        //, ctx = canvas.getContext('2d')
+        , canvasSize = {w: 500, h: 500}
+      //  , stage = new Stage()
+        , pubSub;
+
+    var setCanvasSize = function () {
+        canvas.width = canvasSize.w;
+        canvas.height = canvasSize.h;
 
     };
 
-    App.prototype.sinonTest = function () {
-        return sinonTest({returnTest:function () {return 'what you get'}});
+    var createStyleButtons = function () {
+        var button = new Button(0, 0, 50, 50);
+        stage.addObject(button.getElement());
+        button.addEvent('click', function () {
+            console.log('sdf');
+        })
+
     };
-    App.prototype.render = function () {
 
-        $(this.el).text('require.js up and '+ test());
+
+    var init = function () {
+        pubSub = new EventEmitter();
+        setCanvasSize();
+        createStyleButtons();
+        console.log('her');
 
     };
 
-    return App;
+    return{init:init, pubSub:pubSub};
+
+};//app
+
+    return {app:app};
 });
+
+
+

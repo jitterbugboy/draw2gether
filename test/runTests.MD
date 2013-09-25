@@ -1,0 +1,1 @@
+karma start "test/config/karma.conf.js"
