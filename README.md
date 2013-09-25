@@ -1,4 +1,4 @@
-draw2gether
-===========
+baseSetup
+=========
 
-a learning project
+a base setup for karma,requirejs, sinon -and maybe more
