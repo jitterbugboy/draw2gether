@@ -42,7 +42,7 @@ module.exports = function(config) {
 
       coverageReporter: {
           type : 'text'
-          //,dir : 'coverage/'
+          ,dir : 'test/coverage/'
       },
 
 
