@@ -5,6 +5,9 @@
 
       };
 
+
+
+
      Stage.prototype.getElement = function () {
          return this._element;
      };
