@@ -35,10 +35,15 @@ define(function () {
 
     };
 
+    /**
+     * @description
+     * @param graphic
+     */
     Button.prototype.setGraphic = function (graphic) {
         switch (graphic) {
             case "[object String]":
                 break;
+            default :
 
         }
         this._graphic = graphic;
