@@ -30,14 +30,14 @@ define(function () {
         this._element.style.height = this.h + "px";
         this._element.style.top = this.y + "px";
         this._element.style.left = this.x + "px";
-        this._element.className += " button"
-        this._element.style.backgroundColor = "red";
+        this._element.className += " button";
 
     };
 
     /**
      * @description
      * @param graphic
+     *
      */
     Button.prototype.setGraphic = function (graphic) {
         switch (graphic) {
@@ -46,6 +46,7 @@ define(function () {
             default :
 
         }
+
         this._graphic = graphic;
     };
     Button.prototype.addImage = function (path) {
