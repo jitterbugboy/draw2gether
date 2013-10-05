@@ -20,10 +20,24 @@ define(['components/Button'], function(Button) {
             expect(testButton).toBeDefined();
 
         });
-        it('can be instanciated', function () {
-            var button = new Button(5,5,7,7);
-            expect(button.x).toEqual(5);
-        })
+        it('can be instanciated with correct parameters', function () {
+
+            expect(testButton.x).toEqual(5);
+            expect(testButton.y).toEqual(10);
+            expect(testButton.w).toEqual(15);
+            expect(testButton.h).toEqual(20);
+        });
+
+
+        it("can return a DOM element using getElement", function () {
+            expect(testButton.getElement().nodeType).toBe(1);
+
+        });
+
+        it("can set correct className", function () {
+            expect(testButton.getElement().className).toContain('button');
+        });
+
 
 
     });

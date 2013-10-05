@@ -10,7 +10,7 @@ define(['factory/DrawDevicesFactory', 'components/Pen'], function (DrawDevicesFa
             catch (e) {
                 throw new Error('can not instanciate DrawDevicesFactory');
             }
-            ;
+
         });
 
         //TEAR DOWN

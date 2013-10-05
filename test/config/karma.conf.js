@@ -41,7 +41,7 @@ module.exports = function(config) {
       },
 
       coverageReporter: {
-          type : 'text'
+          type : 'html'
           ,dir : 'test/coverage/'
       },
 
@@ -72,7 +72,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome' /*,'IE' /*, 'Firefox' ,  'Safari', 'Opera', 'ChromeCanary'*/],
+    browsers: ['Chrome' /*,'IE' , 'Firefox' ,  'Safari', 'Opera', 'ChromeCanary'*/],
 
 
     // If browser does not capture in given timeout [ms], kill it

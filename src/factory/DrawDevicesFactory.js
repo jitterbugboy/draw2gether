@@ -2,6 +2,7 @@ define(function (require) {
     "use strict";
     var factoryObjects = {
         Pen: require("components/Pen")
+        , Standard:  require("components/Pen")
     };
 
     var DrawDevicesFactory = function (type) {
