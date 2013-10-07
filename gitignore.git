@@ -1,2 +1,5 @@
 # ignore idea files
 .idea/**/*
+.idea/*
+
+test/coverage/*
