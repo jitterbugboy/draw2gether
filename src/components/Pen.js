@@ -5,14 +5,15 @@
      * @implements {IDrawingDevice}
      * @constructor
      */
-    function Pen () {
+    function Pen () {};
 
-    };
     Pen.prototype.constructor = Pen;
 
 
     Pen.prototype.setColor = function () {};
-    Pen.prototype.draw = function () {};
+    Pen.prototype.draw = function () {
+
+    };
 
 
     // Expose the Object either via AMD or the global object

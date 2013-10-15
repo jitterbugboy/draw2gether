@@ -5,7 +5,7 @@ define(function (require) {
         , Standard:  require("components/Pen")
     };
 
-    var DrawDevicesFactory = function (type) {
+    function DrawDevicesFactory (type) {
         if (type) {
          return this.getInstance(type);
          //return new factoryObjects[type];

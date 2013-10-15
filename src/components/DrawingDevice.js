@@ -24,6 +24,4 @@
     else {
         exports.DrawingDevice = new DrawingDevice;
     }
-
-
 }(this));

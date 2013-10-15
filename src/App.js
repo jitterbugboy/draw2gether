@@ -1,10 +1,10 @@
-define(['jquery','EventEmitter'], function ($) {
+define(['jquery','EventEmitter','components/Button','core/Stage'], function ($,EventEmitter,Button, Stage) {
     "use strict";
 var app = function () {
-    var canvas = document.getElementById("drawCanvas") || {}
+    var canvas = document.getElementById("drawCanvas") || document.createElement('canvas')
         //, ctx = canvas.getContext('2d')
         , canvasSize = {w: 500, h: 500}
-      //  , stage = new Stage()
+        , stage = new Stage(canvas)
         , pubSub;
 
     var setCanvasSize = function () {
@@ -35,7 +35,7 @@ var app = function () {
 
 };//app
 
-    return {app:app};
+    return app();
 });
 
 
