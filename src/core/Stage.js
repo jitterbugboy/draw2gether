@@ -1,17 +1,17 @@
-define(function (exports) {
+define(['utilsJhn','core/CanvasElement'],function (utilsJhn, CanvasElement) {
 "use strict";
       var Stage = function (element) {
-          this._element = element.getContext("2d");//document.getElementById('stage');
+          CanvasElement.apply(this, arguments);
 
       };
+    utilsJhn.classExtend(CanvasElement, Stage);
 
-     Stage.prototype.getElement = function () {
-         return this._element;
-     };
 
     Stage.prototype.addObject = function (object) {
-        var stage = this._element;
-        stage.fillStyle ="red";
+        var stage = this._ctx;
+        console.log(stage);
+
+        stage.fillStyle ="#000";
         stage.fillRect(2,20,20,33);
         //this._element.appendChild(object);
 

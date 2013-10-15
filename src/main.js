@@ -6,7 +6,14 @@ requirejs.config({
         , 'underscore': '../lib/underscore'
         , 'sinon': '../lib/sinon'
         , 'EventEmitter' :'../lib/EventEmitter'
+
     },
+
+    packages : [{
+        name : "utilsJhn",
+        location : "../lib/utilsJhn",
+        main : "mainUtils"
+    }],
 
     shim: {
         'underscore': {
@@ -19,13 +26,6 @@ requirejs.config({
 
 
 define(['app'], function (app) {
-console.log('ewr', typeof  document.addEventListener);
-
-    var p = document.createElement('p');
-    p.innerHTML = "wqed";
-    document.body.appendChild(p);
-
-
         app.init();
 
 });

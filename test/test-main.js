@@ -7,6 +7,7 @@ for (var file in window.__karma__.files) {
     }
 }
 
+
 requirejs.config({
     // Karma serves files from '/base'
     baseUrl: '/base/src',
@@ -17,6 +18,12 @@ requirejs.config({
         , 'sinon': '../lib/sinon'
         , 'EventEmitter' :'../lib/EventEmitter'
     },
+
+    packages : [{
+        name : "utilsJhn",
+        location : "../lib/utilsJhn",
+        main : "mainUtils"
+    }],
 
     shim: {
         'underscore': {

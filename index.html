@@ -2,9 +2,29 @@
 <html>
 <head>
     <title>Jakobs side</title>
+    <style>
+        .canvasElement-base {
+            position: absolute;
+        }
+        .canvasContainer{
+            position: relative;
+            width: 500px;
+            height: 500px;
+
+        }
+        .divider{
+            clear:both;
+        }
+    </style>
 </head>
 <body>
-<canvas id="drawCanvas"></canvas>
+<div class="canvasContainer">
+    <canvas id="drawCanvas" width="500" height="500"></canvas>
+</div>
+
+<div class="divider">
+    <p>Starting</p>
+</div>
 
 <script type="text/javascript" data-main="src/main.js" src="lib/requirejs.js"></script>
 <!--<script type="text/javascript" src="config/require.conf.js"></script>-->

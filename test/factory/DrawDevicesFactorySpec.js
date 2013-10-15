@@ -1,4 +1,4 @@
-define(['factory/DrawDevicesFactory', 'components/Pen'], function (DrawDevicesFactory, Pen) {
+define(['factory/DrawDevicesFactory', 'components/drawingTools/Pen'], function (DrawDevicesFactory, Pen) {
 
     describe('DrawDevicesFactory test Suite', function () {
         var testDrawDevicesFactory = null;
