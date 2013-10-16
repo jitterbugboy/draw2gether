@@ -5,8 +5,11 @@
      */
     var IDrawingDevice = function () {};
     IDrawingDevice.prototype = {
-        setColor: function () {}
+      setColor: function () {}
     , draw:function () {}
+    , setX : function () {}
+    , setY : function () {}
+
     };
 
 });

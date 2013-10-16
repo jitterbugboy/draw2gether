@@ -1,5 +1,7 @@
-define(function (exports) {
+define(['core/appSettings'],function (appSettings) {
     "use strict";
+
+    var INSTANCE_COUNT = 0;
     /**
      * @description a base class for all layers / canvas Elements used
      * @param x
@@ -10,7 +12,7 @@ define(function (exports) {
      * @param zIndex
      * @constructor
      */
-    var CanvasElement = function (x, y, w, h, alpha, zIndex, _element) {
+    function CanvasElement (x, y, w, h, alpha, zIndex, _element) {
         var item
             , properties = {
                 x: 0
@@ -27,8 +29,7 @@ define(function (exports) {
 
             for (item in properties) {
                 if (properties.hasOwnProperty(item)) {
-                    console.log(item,arguments[0][item]);
-
+                    console.log(item, arguments[0][item]);
                     this[item] = arguments[0][item] || properties[item];
                 }
             }
@@ -46,22 +47,27 @@ define(function (exports) {
         //public Properties
         this.locked = false;
 
+        //temp
+        this.zIndex = INSTANCE_COUNT;
+
         // do basic DOM setup
         this._setStyles();
         this._setCommonClass();
         this._ctx = this._element.getContext("2d");
-    };
+
+        //update counter
+        INSTANCE_COUNT++;
+    }    ;
 
     CanvasElement.prototype._setStyles = function () {
         this._element.style.left = this.x;
         this._element.style.top = this.y;
-
-      //  this._element.width = this.w;
-        //this._element.height = this.h;
-
-
         this._element.style.width = this.w;
         this._element.style.height = this.h;
+
+
+        this._element.width = this.w;
+        this._element.height = this.h;
 
         //TODO test this
         this._element.style.alpha = this.alpha;
@@ -74,19 +80,22 @@ define(function (exports) {
         this._element.className += " canvasElement-base";
     };
 
-
-
-    CanvasElement.prototype.getElement = function () {
+   CanvasElement.prototype.getElement = function () {
         return this._element;
+    };
+    CanvasElement.prototype.getCtx = function () {
+        return this._ctx;
+
     };
 
     CanvasElement.prototype.remove = function () {
-        document.removeChild(this._element);
+        this._element.parentNode.removeChild(this._element);
+    //TODO check for memory proplems
+    };
 
-  };
-
-    CanvasElement.prototype.append = function () {
-      //  document.(this._element);
+    CanvasElement.prototype.append = function (node) {
+        var container = node || appSettings.canvasContainer;
+        container.appendChild(this._element);
 
     };
 

@@ -1,6 +1,6 @@
 define(['utilsJhn','core/CanvasElement'],function (utilsJhn, CanvasElement) {
 "use strict";
-      var Stage = function (element) {
+      function Stage(element) {
           CanvasElement.apply(this, arguments);
 
       };
@@ -9,7 +9,7 @@ define(['utilsJhn','core/CanvasElement'],function (utilsJhn, CanvasElement) {
 
     Stage.prototype.addObject = function (object) {
         var stage = this._ctx;
-        console.log(stage);
+
 
         stage.fillStyle ="#000";
         stage.fillRect(2,20,20,33);
