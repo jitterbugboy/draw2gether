@@ -1,7 +1,8 @@
-define(['core/appSettings'],function (appSettings) {
+define(['core/appSettings'], function (appSettings) {
     "use strict";
 
     var INSTANCE_COUNT = 0;
+
     /**
      * @description a base class for all layers / canvas Elements used
      * @param x
@@ -12,21 +13,14 @@ define(['core/appSettings'],function (appSettings) {
      * @param zIndex
      * @constructor
      */
-    function CanvasElement (x, y, w, h, alpha, zIndex, _element) {
+    function CanvasElement(x, y, w, h, alpha, zIndex, _element) {
         var item
             , properties = {
-                x: 0
-                , y: 0
-                , w: 0
-                , h: 0
-                , alpha: 1
-                , zIndex: 1
-                , _element: document.createElement('canvas')
+                x: 0, y: 0, w: 0, h: 0, alpha: 1, zIndex: 1, _element: document.createElement('canvas')
             };
 
         //allow object input
         if (arguments.length === 1 && Object.prototype.toString.call(arguments[0] === "object Object")) {
-
             for (item in properties) {
                 if (properties.hasOwnProperty(item)) {
                     console.log(item, arguments[0][item]);
@@ -57,7 +51,7 @@ define(['core/appSettings'],function (appSettings) {
 
         //update counter
         INSTANCE_COUNT++;
-    }    ;
+    };
 
     CanvasElement.prototype._setStyles = function () {
         this._element.style.left = this.x;
@@ -80,7 +74,7 @@ define(['core/appSettings'],function (appSettings) {
         this._element.className += " canvasElement-base";
     };
 
-   CanvasElement.prototype.getElement = function () {
+    CanvasElement.prototype.getElement = function () {
         return this._element;
     };
     CanvasElement.prototype.getCtx = function () {
@@ -90,7 +84,7 @@ define(['core/appSettings'],function (appSettings) {
 
     CanvasElement.prototype.remove = function () {
         this._element.parentNode.removeChild(this._element);
-    //TODO check for memory proplems
+        //TODO check for memory proplems
     };
 
     CanvasElement.prototype.append = function (node) {
