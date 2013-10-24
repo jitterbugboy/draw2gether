@@ -6,18 +6,21 @@ define(function (require) {
         , Standard:  require("components/drawingTools/Pen")
     };
 
-    var getInstance = function (type,opts) {
+    var getInstance = function (type, args) {
+
+
         try {
-            return new factoryObjects[type](opts);
+            return new factoryObjects['Pen'](args);
+
         }
         catch (e) {
-            throw new Error("requested object does not exist requested",1);
+            throw new Error("requested object does not exist ", 100);
         }
     };
 
-   var  drawDevicesFactory  = function (type, opts) {
+   var  drawDevicesFactory  = function (type, args) {
         if (type) {
-         return getInstance(type, opts);
+         return getInstance(type, args);
          //return new factoryObjects[type];
         }
     };

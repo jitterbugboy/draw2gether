@@ -29,7 +29,6 @@ define(['core/appSettings'],function (appSettings) {
 
             for (item in properties) {
                 if (properties.hasOwnProperty(item)) {
-                    console.log(item, arguments[0][item]);
                     this[item] = arguments[0][item] || properties[item];
                 }
             }
@@ -57,7 +56,7 @@ define(['core/appSettings'],function (appSettings) {
 
         //update counter
         INSTANCE_COUNT++;
-    }    ;
+    } ;
 
     CanvasElement.prototype._setStyles = function () {
         this._element.style.left = this.x;
