@@ -23,7 +23,7 @@ define(['core/appSettings'], function (appSettings) {
         if (arguments.length === 1 && Object.prototype.toString.call(arguments[0] === "object Object")) {
             for (item in properties) {
                 if (properties.hasOwnProperty(item)) {
-                    console.log(item, arguments[0][item]);
+
                     this[item] = arguments[0][item] || properties[item];
                 }
             }
@@ -92,6 +92,7 @@ define(['core/appSettings'], function (appSettings) {
         container.appendChild(this._element);
 
     };
+
 
     return CanvasElement;
 });

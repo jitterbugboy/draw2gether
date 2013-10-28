@@ -6,7 +6,7 @@ for (var file in window.__karma__.files) {
         }
     }
 }
-
+dump(new Date());
 
 requirejs.config({
     // Karma serves files from '/base'

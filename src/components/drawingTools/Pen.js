@@ -7,7 +7,8 @@
      */
     function Pen (opts) {
         //todo Check options are valid
-        this.ctx = opts.ctx;
+        this.ctx = opts.getCtx();
+
 
         this.x= 0;
         this.y = 0;

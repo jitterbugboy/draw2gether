@@ -1,16 +1,16 @@
-define(['factory/drawDevicesFactory', 'components/drawingTools/Pen'], function (DrawDevicesFactory, Pen) {
+define(['factory/drawDevicesFactory', 'components/drawingTools/Pen', 'core/CanvasElement'], function (DrawDevicesFactory, Pen, CanvasElement) {
 
     describe('DrawDevicesFactory test Suite', function () {
-        var testDrawDevicesFactory = null;
+        var canvasElement = null;
         //SETUP
         beforeEach(function () {
-
+                         canvasElement = new CanvasElement();
 
         });
 
         //TEAR DOWN
         afterEach(function () {
-            testDrawDevicesFactory = null;
+            canvasElement = null;
         });
 
         //////////////////////////////////////
@@ -18,7 +18,7 @@ define(['factory/drawDevicesFactory', 'components/drawingTools/Pen'], function (
         //////////////////////////////////////
 
         it('can return an instance of Pen being instanciated', function () {
-            var instance = DrawDevicesFactory('Pen');
+            var instance = DrawDevicesFactory('Pen', canvasElement);
             expect(instance instanceof Pen).toBe(true);
         });
 

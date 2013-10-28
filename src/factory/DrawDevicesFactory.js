@@ -6,8 +6,8 @@ define(function (require) {
         , Standard:  require("components/drawingTools/Pen")
     };
 
-    var getInstance = function (type,opts) {
-       return new factoryObjects.Pen();
+    var getInstance = function (type, opts) {
+
         try {
             return new factoryObjects[type](opts);
         }
