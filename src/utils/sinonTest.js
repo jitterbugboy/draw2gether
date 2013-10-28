@@ -1,4 +1,4 @@
-(function (exports) {
+(function (exp orts) {
 
     var sinonTest = function (obj) {
 

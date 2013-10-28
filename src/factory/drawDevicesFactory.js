@@ -7,6 +7,7 @@ define(function (require) {
     };
 
     var getInstance = function (type,opts) {
+       return new factoryObjects.Pen();
         try {
             return new factoryObjects[type](opts);
         }
