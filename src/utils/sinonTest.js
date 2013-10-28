@@ -14,3 +14,14 @@
         exports.sinonTest = sinonTest;
     }
 }(this));
+
+
+
+[user]
+name = Jitterbugboy
+email = jitternielsen@gmail.com
+    [merge]
+tool = p4merge
+tool = C:\\Program
+    [mergetool "p4merge"]
+path = 'C:\\Programmer\Perforce\p4merge.exe'

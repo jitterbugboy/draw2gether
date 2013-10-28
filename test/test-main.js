@@ -6,6 +6,7 @@ for (var file in window.__karma__.files) {
         }
     }
 }
+dump('TimeRun:',new Date());
 
 
 requirejs.config({
