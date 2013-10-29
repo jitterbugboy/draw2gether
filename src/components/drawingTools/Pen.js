@@ -2,13 +2,13 @@
 
     /**
      * @description a device that handles drawing onto the canvas
-     * @param canvas {CanvasElement}
      * @implements {IDrawingDevice}
      * @constructor
      */
-    function Pen (canvas) {
+    function Pen (opts) {
         //todo Check options are valid
-        this.ctx = canvas.getCtx();
+        this.ctx = opts.getCtx();
+
 
         this.x= 0;
         this.y = 0;

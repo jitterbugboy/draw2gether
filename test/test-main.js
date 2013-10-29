@@ -6,8 +6,7 @@ for (var file in window.__karma__.files) {
         }
     }
 }
-dump('TimeRun:',new Date());
-
+dump(new Date());
 
 requirejs.config({
     // Karma serves files from '/base'
