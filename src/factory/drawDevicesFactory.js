@@ -22,11 +22,5 @@ define(function (require) {
             //return new factoryObjects[type];
         }
     };
-
-
-
-
     return drawDevicesFactory;
-
-
 });
