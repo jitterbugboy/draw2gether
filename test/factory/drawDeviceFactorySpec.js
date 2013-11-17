@@ -1,6 +1,6 @@
-define(['factory/drawDevicesFactory', 'components/drawingTools/Pen', 'core/CanvasElement', 'sinon'], function (DrawDevicesFactory, Pen, CanvasElement, sinon) {
+define(['factory/drawDevicesFactory', 'components/drawingTools/Pen', 'core/CanvasElement', 'sinon'], function (drawDevicesFactory, Pen, CanvasElement, sinon) {
 
-    describe('DrawDevicesFactory test Suite', function () {
+    describe('drawDevicesFactory test Suite', function () {
         var canvasElement = null;
         //SETUP
         beforeEach(function () {
@@ -17,24 +17,15 @@ define(['factory/drawDevicesFactory', 'components/drawingTools/Pen', 'core/Canva
         //////////////////////////////////////
 
         it('can return an instance of Pen being instanciated', function () {
-            var instance = DrawDevicesFactory('Pen', canvasElement);
+            var instance = drawDevicesFactory('Pen', canvasElement);
             expect(instance instanceof Pen).toBe(true);
         });
 
-        /*
 
-         it('can return an instance of Pen using getInstance ', function () {
-         var instance = testDrawDevicesFactory.getInstance('Pen');
-         expect(instance instanceof Pen).toBe(true);
-         });
+        it("can throw Error when getting an object that does not exist", function () {
+           expect(function () {var instance = drawDevicesFactory('doesNotExist')}).toThrow("requested object does not exist");
+        });
 
-         it('can THROW an type error when using getInstance on none exsisting objects', function () {
-         expect(function () {
-         testDrawDevicesFactory.getInstance('IDontExsist')
-         }).toThrow(new Error("requested object does not exist requested"));
-         });
-
-         */
     });
 });
  
