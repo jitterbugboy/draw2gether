@@ -21,6 +21,7 @@ define(function (require) {
             return getInstance(type, opts);
             //return new factoryObjects[type];
         }
+
     };
     return drawDevicesFactory;
 });
