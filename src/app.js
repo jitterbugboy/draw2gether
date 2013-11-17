@@ -1,5 +1,5 @@
 define(['jquery','EventEmitter','components/Button','core/Stage', 'utilsJhn','core/appSettings','core/CanvasElement', 'factory/drawDevicesFactory']
-    , function ($,EventEmitter,Button, Stage, utilsJhn, appSettings, CanvasElement, drawDeviceFactory) {
+    , function ($,EventEmitter,Button, Stage, utilsJhn, appSettings, CanvasElement, drawDevicesFactory) {
         "use strict";
         var app = function () {
             var canvas = document.getElementById("drawCanvas") || document.createElement('canvas')
@@ -22,12 +22,12 @@ define(['jquery','EventEmitter','components/Button','core/Stage', 'utilsJhn','co
             };
 
             var handleMouseDown = function () {
-                var layer = new CanvasElement({x:0, y:0, w:appSettings.mainCanvasSize.w, h: appSettings.mainCanvasSize.h})
-                    ,ctx = layer.getCtx();
+                var layer = new CanvasElement({x:0, y:0, w:appSettings.mainCanvasSize.w, h: appSettings.mainCanvasSize.h}), ctx;
+                drawDevice = drawDevicesFactory('Standard',layer);
+                ctx = drawDevice.getCtx();
 
                 layer.append();
 
-                drawDevice = drawDeviceFactory('Standard',{ctx:ctx});
                 ctx.fillStyle ="#000";
                 ctx.fillRect(20,20,20,20);
                 draw = true;
@@ -56,6 +56,7 @@ define(['jquery','EventEmitter','components/Button','core/Stage', 'utilsJhn','co
             };
 
             var addEvents = function () {
+
                 utilsJhn.addEvents(appSettings.canvasContainer, "mousedown" ,handleMouseDown);
                 utilsJhn.addEvents(appSettings.canvasContainer, "mouseup" ,handleMouseUp);
                 utilsJhn.addEvents(appSettings.canvasContainer, "mousemove" ,handleMouseMove);

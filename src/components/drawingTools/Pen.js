@@ -1,54 +1,35 @@
-(function (exports) {
+define(["components/drawingTools/DrawingDevice", "utilsJhn"], function (DrawingDevice, utilsJhn) {
+
+    var u = utilsJhn;
 
     /**
      * @description a device that handles drawing onto the canvas
-     * @implements {IDrawingDevice}
      * @param {canvasElement}
      * @constructor
      */
-    function Pen (canvasElement) {
-        //todo Check options are valid
-        this.ctx = canvasElement.getCtx();
-
-
-        this.x= 0;
-        this.y = 0;
-        this.w = 30;
-        this.h = 30;
-
+        //* @implements {IDrawingDevice} ----- hmmmm it is inherited ... how to ?
+    function Pen(canvasElement, settings) {
+        DrawingDevice.call(this, canvasElement, settings);
+       if(settings){
+        this.w = settings.w || 30;
+        this.h = settings.h || 30;
+       }
     };
 
+    //extend / inherit
+    u.classExtend(DrawingDevice, Pen);
 
-    Pen.prototype.constructor = Pen;
 
-
-    Pen.prototype.setX = function (val) {
-        this.x = val;
+    Pen.prototype.setColor = function () {
     };
-
-    Pen.prototype.setY = function (val) {
-        this.y = val;
-    };
-
-    Pen.prototype.setColor = function () {};
 
     Pen.prototype.draw = function () {
 
-         this.ctx.fillStyle ="blue";
-         this.ctx.fillRect(this.x, this.y, this.w, this.h);
+        this.ctx.fillStyle = "blue";
+        this.ctx.fillRect(this.x, this.y, this.w, this.h);
 
     };
 
+    return Pen;
 
-    // Expose the Object either via AMD or the global object
-    if (typeof define === 'function' && define.amd) {
-        define(function () {
-            return Pen;
-        });
-    }
-    else {
-        exports.Pen = Pen;
-    }
-
-
-}(this));
+});

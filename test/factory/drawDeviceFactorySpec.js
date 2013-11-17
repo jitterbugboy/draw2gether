@@ -17,10 +17,16 @@ define(['factory/drawDevicesFactory', 'components/drawingTools/Pen', 'core/Canva
         //////////////////////////////////////
 
         it('can return an instance of Pen being instanciated', function () {
-            var instance = drawDevicesFactory('Pen', canvasElement);
-            expect(instance instanceof Pen).toBe(true);
+          var instance = drawDevicesFactory('Pen', canvasElement);
+          expect(instance instanceof Pen).toBe(true);
         });
 
+        it('can return a standard drawing device', function () {
+
+            var instance = drawDevicesFactory('Standard',canvasElement);
+            expect(instance instanceof Pen).toBe(true);
+
+        });
 
         it("can throw Error when getting an object that does not exist", function () {
            expect(function () {var instance = drawDevicesFactory('doesNotExist')}).toThrow("requested object does not exist");
