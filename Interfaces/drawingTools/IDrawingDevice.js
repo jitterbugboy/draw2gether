@@ -10,6 +10,6 @@
     IDrawingDevice.prototype.setX = function () {};
     IDrawingDevice.prototype.setY = function () {};
 
-return IDrawingDevice;
+    return IDrawingDevice;
 });
 
