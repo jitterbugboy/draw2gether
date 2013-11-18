@@ -5,13 +5,11 @@
      * @constructor
      */
     var IDrawingDevice = function () {};
-    IDrawingDevice.prototype = {
-      setColor: function () {}
-    , draw:function () {}
-    , setX : function () {}
-    , setY : function () {}
+    IDrawingDevice.prototype.setColor =function () {};
+    IDrawingDevice.prototype.draw = function () {};
+    IDrawingDevice.prototype.setX = function () {};
+    IDrawingDevice.prototype.setY = function () {};
 
-    };
-return IDrawingDevice;
+    return IDrawingDevice;
 });
 
