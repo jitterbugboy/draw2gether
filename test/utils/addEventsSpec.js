@@ -6,6 +6,9 @@ define(['utilsJhn/addEvents'], function (addEvents) {
 
         beforeEach(function () {
             div = document.createElement('div');
+            div.setAttribute("id","hej");
+            document.getElementsByTagName('body')[0].appendChild(div);
+            dump(document.body.children.length);
 
         });
         afterEach(function () {
@@ -13,16 +16,23 @@ define(['utilsJhn/addEvents'], function (addEvents) {
             nullElement = null;
         });
 
+        it('can add Element to DOM', function () {
+            expect( document.getElementById('hej')).toBe(div);
+
+        }) ;
 
         it('can add click event to div', function () {
+           dump(typeof addEvents);
+
             addEvents(div, 'click', function () {
                 nullElement = "notNull";
             });
-            div.click();
+            document.getElementById('hej').click();
             expect(nullElement).toBe("notNull");
         });
 
         it('can add have clicked event object passed as argument', function () {
+
             addEvents(div, 'click', function (e) {
                 nullElement = "notNull";
             });

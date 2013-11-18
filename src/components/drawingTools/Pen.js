@@ -20,6 +20,7 @@ define(["components/drawingTools/DrawingDevice", "utilsJhn"], function (DrawingD
     u.classExtend(DrawingDevice, Pen);
 
 
+
     Pen.prototype.setColor = function () {
     };
 
@@ -29,6 +30,7 @@ define(["components/drawingTools/DrawingDevice", "utilsJhn"], function (DrawingD
         this.ctx.fillRect(this.x, this.y, this.w, this.h);
 
     };
+
 
     return Pen;
 
