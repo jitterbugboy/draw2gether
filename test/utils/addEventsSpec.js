@@ -21,6 +21,17 @@ define(['utilsJhn/addEvents'], function (addEvents) {
 
         }) ;
 
+        it('has defined jquery as $', function () {
+           expect($).toBe(jQuery);
+            expect($('<div id="some-id"></div>')).toBe('div')
+
+        });
+
+    /*    it('can use jquery', function () {
+           expect($('<div id="hej"></div>')).toBe('div')
+        });
+
+/*
         it('can add click event to div', function () {
            dump(typeof addEvents);
 
@@ -40,7 +51,7 @@ define(['utilsJhn/addEvents'], function (addEvents) {
             expect(nullElement).toBe("notNull");
         });
 
-
+*/
 
     });
 });
