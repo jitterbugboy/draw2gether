@@ -1,4 +1,4 @@
-define(['factory/drawDevicesFactory', 'components/drawingTools/Pen', 'core/CanvasElement', 'sinon'], function (drawDevicesFactory, Pen, CanvasElement, sinon) {
+define(['factory/drawDevicesFactory', 'components/drawingTools/Pen', 'core/CanvasElement' , 'sinon'], function (drawDevicesFactory, Pen, CanvasElement, sinon) {
 
     describe('drawDevicesFactory test Suite', function () {
         var canvasElement = null;
@@ -15,6 +15,7 @@ define(['factory/drawDevicesFactory', 'components/drawingTools/Pen', 'core/Canva
         //////////////////////////////////////
         ////////////SPEC//////////////////////
         //////////////////////////////////////
+
 
         it('can return an instance of Pen being instanciated', function () {
           var instance = drawDevicesFactory('Pen', canvasElement);

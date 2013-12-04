@@ -1,5 +1,6 @@
 define(['utilsJhn/addEvents'], function (addEvents) {
 
+
     describe('Utils-addEvents testSuite', function () {
         var div
             , nullElement = null;
@@ -8,10 +9,10 @@ define(['utilsJhn/addEvents'], function (addEvents) {
             div = document.createElement('div');
             div.setAttribute("id","hej");
             document.getElementsByTagName('body')[0].appendChild(div);
-            dump(document.body.children.length);
 
         });
         afterEach(function () {
+            document.body.removeChild(div);
             div = null;
             nullElement = null;
         });
@@ -22,26 +23,21 @@ define(['utilsJhn/addEvents'], function (addEvents) {
         }) ;
 
         it('has defined jquery as $', function () {
-           expect($).toBe(jQuery);
-            expect($('<div id="some-id"></div>')).toBe('div')
+            var count = document.getElementsByTagName('body')[0].children.length;
 
         });
 
-    /*    it('can use jquery', function () {
-           expect($('<div id="hej"></div>')).toBe('div')
-        });
-
-/*
         it('can add click event to div', function () {
-           dump(typeof addEvents);
-
             addEvents(div, 'click', function () {
                 nullElement = "notNull";
             });
-            document.getElementById('hej').click();
+           expect($('#hej').length).toBe(1);
+           $('#hej').trigger('click');
+            //div.click();
             expect(nullElement).toBe("notNull");
         });
 
+        /*
         it('can add have clicked event object passed as argument', function () {
 
             addEvents(div, 'click', function (e) {

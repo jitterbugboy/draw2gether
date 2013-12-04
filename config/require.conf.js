@@ -5,7 +5,7 @@ requirejs.config({
     paths: {
         'jquery': '../lib/jquery'
         , 'underscore': '../lib/underscore'
-        , 'sinon': '../lib/sinon'
+      //  , 'sinon': '../lib/sinon'
         , 'EventEmitter' :'../lib/EventEmitter'
     },
 

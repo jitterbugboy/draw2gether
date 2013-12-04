@@ -8,15 +8,33 @@ for (var file in window.__karma__.files) {
 }
 dump(new Date());
 
+requirejs.onError = function (err) {
+    console.log(err.requireType, err.requireModules);
+
+    if (err.requireType === 'timeout') {
+        console.log('modules: ' /*+ err.requireModules, this*/);
+    }
+
+    throw err;
+};
+
+
 requirejs.config({
+catchError:true,
+
+
+
     // Karma serves files from '/base'
     baseUrl: '/base/src',
 
     paths: {
-        'jquery': '../lib/jquery'
-        , 'underscore': '../lib/underscore'
-        , 'sinon': '../lib/sinon'
-        , 'EventEmitter' :'../lib/EventEmitter'
+         'underscore'      : '../lib/underscore'
+        , 'jquery'            : '../lib/jquery'
+        , 'EventEmitter'    :'../lib/EventEmitter'
+        //for testing only
+        , 'sinon'           : '../lib/sinon'
+
+
     },
 
     packages : [{
@@ -29,6 +47,7 @@ requirejs.config({
         'underscore': {
             exports: '_'
         }
+
     },
 
     // ask Require.js to load these files (all our tests)
