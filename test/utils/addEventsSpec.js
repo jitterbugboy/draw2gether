@@ -28,16 +28,33 @@ define(['utilsJhn/addEvents'], function (addEvents) {
         });
 
         it('can add click event to div', function () {
-            addEvents(div, 'click', function () {
+            addEvents($('#hej')[0], 'click', function () {
                 nullElement = "notNull";
             });
            expect($('#hej').length).toBe(1);
-           $('#hej').trigger('click');
+          //  expect($('#hej')).toBeTruthy();
+
+      /*      $('#hej').on('click', function () {
+
+                nullElement = 'jquery';
+                console.log('was clicked');
+            });
+        */
+            $('#hej').trigger('click');
             //div.click();
-            expect(nullElement).toBe("notNull");
+
+
+
+            expect(nullElement).toBe('notNull');
+          //expect(nullElement).toBe('jquery');
+
+
+
+
         });
 
-        /*
+
+  /*
         it('can add have clicked event object passed as argument', function () {
 
             addEvents(div, 'click', function (e) {
