@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+                    <div  id="hej">hej</div>
+</body>
+<script type="text/javascript" src="lib/jquery.js" ></script>
+<script type="text/javascript" src="lib/utilsJhn/trigger.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var clickElm =  $('#hej')[0];
+        $('#hej').on('click', function () {
+            console.log('hej var clicked');
+        });
+        trigger(clickElm, 'click');
+       // trigger(clickElm, 'click');
+
+
+    })  ;
+</script>
+</html>

@@ -80,7 +80,7 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
       //'C:/Program Files (x86)/Mozilla Firefox/firefox.exe'
-    browsers: ['Chrome' , 'Safari',  'IE' , 'C:/Program Files (x86)/Mozilla Firefox/firefox.exe' ,  'C:/Program Files (x86)/Opera/launcher.exe' /*, 'ChromeCanary'*/],
+    browsers: ['Chrome' , 'Safari',  'IE' , 'C:/Program Files (x86)/Mozilla Firefox/firefox.exe' /* ,  'C:/Program Files (x86)/Opera/launcher.exe' /*, 'ChromeCanary'*/],
 
 
 

@@ -1,4 +1,4 @@
-define(['utilsJhn/addEvents'], function (addEvents) {
+define(['utilsJhn/addEvents', 'utilsJhn/trigger'], function (addEvents, trigger) {
 
 
     describe('Utils-addEvents testSuite', function () {
@@ -34,13 +34,13 @@ define(['utilsJhn/addEvents'], function (addEvents) {
            expect($('#hej').length).toBe(1);
           //  expect($('#hej')).toBeTruthy();
 
-      /*      $('#hej').on('click', function () {
+       $('#hej').on('click', function () {
 
-                nullElement = 'jquery';
+                nullElement = 'notNull';
                 console.log('was clicked');
             });
-        */
-            $('#hej').trigger('click');
+
+            trigger(div, 'click');
             //div.click();
 
 
