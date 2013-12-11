@@ -17,7 +17,7 @@ module.exports = function(config) {
         {pattern: 'lib/**/*.js', included: false},
         {pattern: 'src/**/*.js', included: false},
         {pattern: 'test/**/*Spec.js', included: false},
-        {pattern: 'test/lib/jquery.js', included: false},
+        {pattern: 'test/lib/**/*.js', included: false},
 
        // {pattern: 'test/lib/jasmine-jquery.js', included: false},
        // {pattern: 'test/lib/myTeset.js', included: false},
@@ -80,7 +80,8 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
       //'C:/Program Files (x86)/Mozilla Firefox/firefox.exe'
-    browsers: ['Chrome' , 'Safari',  'IE' , 'C:/Program Files (x86)/Mozilla Firefox/firefox.exe' /* ,  'C:/Program Files (x86)/Opera/launcher.exe' /*, 'ChromeCanary'*/],
+//WIN    browsers: ['Chrome' , 'Safari',  'IE' , 'C:/Program Files (x86)/Mozilla Firefox/firefox.exe' /* ,  'C:/Program Files (x86)/Opera/launcher.exe' /*, 'ChromeCanary'*/],
+      browsers: ['Chrome' , 'Safari',  'Firefox'],
 
 
 

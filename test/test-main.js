@@ -28,11 +28,11 @@ catchError:true,
     baseUrl: '/base/src',
 
     paths: {
-         'underscore'      : '../lib/underscore'
-        , 'jquery'            : '../lib/jquery'
-        , 'EventEmitter'    :'../lib/EventEmitter'
+         'underscore'      : '../lib/underscore' //might not be used
+        , 'jquery'            : '../lib/jquery' //might not be used
+        , 'EventEmitter'    :'../lib/EventEmitter'//might not be used
         //for testing only
-        , 'sinon'           : '../lib/sinon'
+        , 'sinon'           : '../test/lib/sinon'
 
 
     },

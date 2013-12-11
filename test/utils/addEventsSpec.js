@@ -1,70 +1,52 @@
-define(['utilsJhn/addEvents', 'utilsJhn/trigger'], function (addEvents, trigger) {
+define(['utilsJhn/addEvents', 'utilsJhn/trigger', 'sinon'], function (addEvents, trigger, sinon) {
 
 
     describe('Utils-addEvents testSuite', function () {
-        var div
-            , nullElement = null;
+        var div;
 
         beforeEach(function () {
             div = document.createElement('div');
-            div.setAttribute("id","hej");
             document.getElementsByTagName('body')[0].appendChild(div);
 
         });
         afterEach(function () {
             document.body.removeChild(div);
             div = null;
-            nullElement = null;
-        });
-
-        it('can add Element to DOM', function () {
-            expect( document.getElementById('hej')).toBe(div);
-
-        }) ;
-
-        it('has defined jquery as $', function () {
-            var count = document.getElementsByTagName('body')[0].children.length;
 
         });
 
-        it('can add click event to div', function () {
-            addEvents($('#hej')[0], 'click', function () {
-                nullElement = "notNull";
-            });
-           expect($('#hej').length).toBe(1);
-          //  expect($('#hej')).toBeTruthy();
 
-       $('#hej').on('click', function () {
-
-                nullElement = 'notNull';
-                console.log('was clicked');
-            });
-
+       it('can add click event to div sinon', function () {
+            var handler = sinon.spy();
+            addEvents(div,'click', handler);
             trigger(div, 'click');
-            //div.click();
+            expect(handler.calledOnce).toBe(true);
+        });
 
 
 
-            expect(nullElement).toBe('notNull');
-          //expect(nullElement).toBe('jquery');
+        it('has clicked dom element as this reference', function () {
+            var handler = sinon.spy();
+            addEvents(div,'click', handler);
+            trigger(div, 'click');
 
-
+            expect(handler.calledOn(div)).toBe(true);
 
 
         });
 
 
-  /*
-        it('can add have clicked event object passed as argument', function () {
+        /*
+              it('can add have clicked event object passed as argument', function () {
 
-            addEvents(div, 'click', function (e) {
-                nullElement = "notNull";
-            });
-            div.click();
-            expect(nullElement).toBe("notNull");
-        });
+                  addEvents(div, 'click', function (e) {
+                      nullElement = "notNull";
+                  });
+                  div.click();
+                  expect(nullElement).toBe("notNull");
+              });
 
-*/
+      */
 
     });
 });

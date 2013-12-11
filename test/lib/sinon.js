@@ -32,8 +32,9 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+define(function () {
 
-this.sinon = (function () {
+var sinon = (function () {
     var buster = (function (setTimeout, B) {
         var isNode = typeof require == "function" && typeof module == "object";
         var div = typeof document != "undefined" && document.createElement("div");
@@ -4288,3 +4289,6 @@ this.sinon = (function () {
     }(typeof sinon == "object" && sinon || null, typeof window != "undefined" ? window : (typeof self != "undefined") ? self : global));
 
     return sinon;}.call(typeof window != 'undefined' && window || {}));
+return sinon;
+
+});

@@ -1,4 +1,4 @@
-define(['sinon', 'utils/sinonTest'], function(sinon, sinon) {
+define(['sinon', 'utils/sinonTest'], function(sinon, sinonTest) {
 
     describe('just checking sinon', function() {
 
